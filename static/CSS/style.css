@@ -27,7 +27,7 @@ body.container{
     background-attachment: fixed;
 }
 
-label, h3, h1{
+label, h4:first-child, h1{
     color:white;
 }
 body, html {
@@ -48,7 +48,11 @@ form#post{
 div#collapseExample{
     margin-bottom: 15px;
 }
-div.col-md-2 {
+div#col-md-2 {
+  /*display: inline-block;*/
+  width: 190px;
+  height: 580px;
+  padding: 20px;
   background: rgba(138, 137, 137, 0.62);
 }
 img.vote{

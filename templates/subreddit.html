@@ -63,20 +63,27 @@
             </div>
         </div>
 
-        <div class='col-md-2'>
-            <h3>{{ sub['url'] }}</h3>
+        <div id='col-md-2'>
+            <h4>{{ sub['url'] }}</h4>
+            <br>
             <h4>{{ sub['num_subs'] }} Subscriber(s)</h4>
+            <br>
             <h4>Community since {{ sub['created'] }}</h4>
-            <p>{{ sub['description'] }}</p>
+            <br>
+            <p>Description: {{ sub['description'] }}</p>
             {% if not member %}
+            <br>
             <a href="/{{ sub['url'] }}/subscribe">
                 <button type="button" class="btn btn-success">Subscribe</button>
             </a>
+            <br>
             {% else %}
             <h4>Member since {{ info['since'] }}</h4>
+            <br>
             <a href="/{{ sub['url'] }}/unsubscribe">
                 <button type="button" class="btn btn-danger">Unsubscribe</button>
             </a>
+            <br>
             {% endif %} {% with errors = get_flashed_messages(category_filter=["Success:Subscription"]) %} {% include "error.html" %}
             {% endwith %}
         </div>
