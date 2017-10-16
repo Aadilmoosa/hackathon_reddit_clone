@@ -1,6 +1,7 @@
 *{
     margin:0px;
     padding:0px;
+    overflow-wrap: break-word;
 }
 
 nav img {
@@ -15,26 +16,32 @@ nav .navbar-text{
   color: white;
 }
 #white a {
-  color: #353b41;
+  color: red;
 }
 
-body.container{
-    background:linear-gradient(#3650fb, #d0d6f9);
+body{
+    background: url(../img/spacebg.jpg) no-repeat center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
     height:100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding: 100px 25px 25px 25px;
 }
-
+p img{
+    max-height: 100%;
+    max-width: 100%;
+}
 label, h4:first-child, h1{
     color:white;
 }
+h4.card-title{
+    color: black;
+}
 body, html {
     height: 100%;
-}
-body {
-    padding-top: 80px;
 }
 .error{
     color:red;
@@ -48,20 +55,19 @@ form#post{
 div#collapseExample{
     margin-bottom: 15px;
 }
-div#col-md-2 {
-  /*display: inline-block;*/
-  width: 190px;
-  height: 580px;
-  padding: 20px;
-  background: rgba(138, 137, 137, 0.62);
+div.col-md-3 {
+    height: 580px;
+    padding: 20px;
+    background: rgba(138, 137, 137, 0.62);
+    text-align:center;
 }
 
-#col-md-2 h4{
-  margin-bottom: 50px;
+.col-md-3 h4{
+  margin-bottom: 30px;
 }
 
-#col-md-2 h5{
-  margin-bottom: 50px;
+.col-md-3 h5{
+  margin-bottom: 30px;
 }
 
 img.vote{
@@ -89,7 +95,14 @@ h6.votes{
     margin-top: 1em;
 }
 
-
+li.list-group-item{
+    border: none;
+    margin-left: 0;
+}
+ul.list-group{
+    border: 1px solid black;
+    border-radius: 5px;
+}
 #delete{
     margin-bottom:20px;
 }
@@ -98,4 +111,22 @@ h6.votes{
 }
 i.fa-trash-o{
     font-size:20px;
+}
+.col-md-6 h3{
+    color:red;
+}
+.col-md-9 h3{
+    color:red;
+}
+.col-8 h3{
+    color:red;
+}
+#dm{
+    color:red;
+}
+h6.commentnest{
+    margin: 10px 0 10px 0;
+}
+div.collapse{
+    margin-bottom: 1em;
 }

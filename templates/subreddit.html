@@ -18,11 +18,12 @@
     <title>Reddit Clone</title>
 </head>
 
-<body class='container'>
+<body>
     {% include "navbar.html" %}
     <div class='row justify-content-center'>
-        <div class='col-md-10'>
+        <div class='col-md-9'>
             <h3>Top Posts</h3>
+            {% if member %}
             <p>
                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Add new post
@@ -45,6 +46,7 @@
                     </form>
                 </div>
             </div>
+            {% endif %}
             <div class="list-group">
                 {% if posts %} {% for post in posts %}
                 <a href="/{{ sub['url'] }}/{{ post['id'] }}" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -62,12 +64,11 @@
             </div>
         </div>
 
-
-        <div id='col-md-2'>
+        <div class='col-md-3'>
             <h4>{{ sub['url'] }}</h4>
             <h5>{{ sub['num_subs'] }} Subscriber(s) <i class="fa fa-group"></i></h5>
             <h4>Community since {{ sub['created'] }}</h4>
-            <p>Description: {{ sub['description'] }}</p>
+            <p>{{ sub['description'] }}</p>
             {% if not member %}
             <a href="/{{ sub['url'] }}/subscribe">
                 <button type="button" class="btn btn-success">Subscribe</button>
