@@ -14,8 +14,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='JS/function.js') }}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Reddit Clone</title>
 </head>
 
@@ -63,27 +62,21 @@
             </div>
         </div>
 
+
         <div id='col-md-2'>
             <h4>{{ sub['url'] }}</h4>
-            <br>
-            <h4>{{ sub['num_subs'] }} Subscriber(s)</h4>
-            <br>
+            <h5>{{ sub['num_subs'] }} Subscriber(s) <i class="fa fa-group"></i></h5>
             <h4>Community since {{ sub['created'] }}</h4>
-            <br>
             <p>Description: {{ sub['description'] }}</p>
             {% if not member %}
-            <br>
             <a href="/{{ sub['url'] }}/subscribe">
                 <button type="button" class="btn btn-success">Subscribe</button>
             </a>
-            <br>
             {% else %}
             <h4>Member since {{ info['since'] }}</h4>
-            <br>
             <a href="/{{ sub['url'] }}/unsubscribe">
                 <button type="button" class="btn btn-danger">Unsubscribe</button>
             </a>
-            <br>
             {% endif %} {% with errors = get_flashed_messages(category_filter=["Success:Subscription"]) %} {% include "error.html" %}
             {% endwith %}
         </div>
